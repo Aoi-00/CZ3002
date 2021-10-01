@@ -19,9 +19,10 @@ export const createAcc = (postData) => dispatch => {
         body: JSON.stringify(postData)
     })
         .then(res => res.json())
-        .then(data => dispatch({
-            type: 'CREATE_ACC',
-            payload: data
+        .then(data => {
+            dispatch({
+                type: 'CREATE_ACC',
+                payload: data
+            })
         })
-        );
 }

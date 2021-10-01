@@ -63,7 +63,7 @@ function Home() {
                 onChange={e => setPassword(e.target.value)}
               />
               <br></br>
-            <input type="submit" value="Submit" />
+            <input type="submit" className="btn blue" value="Submit" />
             </form>
         </MDBContainer>
     )
