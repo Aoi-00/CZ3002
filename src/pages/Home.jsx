@@ -30,6 +30,7 @@ function Home() {
         .then(result => {
           Cookies.set('userid',result.userid, {path: '/'})
           Cookies.set('sessionid',result.sessionid, {path: '/'})
+          Cookies.set('role',result.role, {path: '/'})
           if (result.role == 0) {
             history.push('/patient')
           }

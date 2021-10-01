@@ -13,6 +13,17 @@ class medicalAssign extends Component {
         difficulty: 'easy',
         questionType: 'Automatic',
     }
+    checkValidUser = () => {
+        // You don't need to put parameters in the link, that makes your life harder. You can just called cookies.get() from anywhere to and validate the role
+        let role = Cookies.get('role')
+        if(role != 1)
+            this.props.history.push('/')
+    }
+
+    componentDidMount(){
+        this.checkValidUser()
+    }
+
     textChange = (e) =>{
         this.setState({
             [e.target.id] : e.target.value
