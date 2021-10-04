@@ -65,7 +65,7 @@ QuestionCreation.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    questionbank: state.create.question,
+    questionbank: state.quest.question,
     
 })
 
