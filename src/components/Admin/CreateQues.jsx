@@ -1,10 +1,13 @@
 import React, { Component, useState } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
 import Navbar from './Navbar';
+import PicUpload from '../share/PicUpload';
 
 const CreateQues = ({ onSubmit }) => {
     const [difficultylevel, setDifficulty] = useState("Select difficulty");
     const [identical, setIdentical] = useState('Yes');
+    const [picture1, setPicture1] = useState('')
+    const [picture2, setPicture2] = useState('')
 
     return (
         <div>
@@ -24,11 +27,11 @@ const CreateQues = ({ onSubmit }) => {
                     </MDBDropdown>
                     <h5>Question</h5>
                    
-                    <MDBBtn color="secondary">Upload</MDBBtn>
+                    <PicUpload picUpload={x => setPicture1(x)} />
                     <br />
                     <h5>Answer</h5>
                   
-                    <MDBBtn color="secondary">Upload</MDBBtn>
+                    <PicUpload picUpload={x => setPicture2(x)} />
                    
                     <h5>Identical?</h5>
                     <MDBDropdown>
@@ -41,7 +44,7 @@ const CreateQues = ({ onSubmit }) => {
                         </MDBDropdownMenu>
                     </MDBDropdown>
                     <br />
-                    <MDBBtn color="primary" onClick={() => onSubmit(difficultylevel, image1, image2, identical)} >Set</MDBBtn>
+                    <MDBBtn color="primary" onClick={() => onSubmit(difficultylevel, picture1, picture2, identical)} >Set</MDBBtn>
                     <MDBBtn color="primary">Back</MDBBtn>
 
 

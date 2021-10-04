@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MDBInputGroup, MDBBtn } from 'mdbreact';
 
-export default class Uploadfile extends Component {
+export default class PicUpload extends Component {
 
     state = {
         form: {
