@@ -16,7 +16,18 @@ import PropTypes from 'prop-types';
         image2:'',
         identical:''
     }
+
+
 //questionid ?
+//
+
+    pictureload1 = (pic1) => {
+        this.setState({image1: pic1});
+    }
+
+    pictureload2 = (pic2) => {
+        this.setState({image2: pic2});
+    }
     onSubmit = (difficultylevel,image1,image2,identical)=> {
         if ([difficultylevel.includes("Select")]) {alert("Please ensure there is no empty input")}
         else{
@@ -41,7 +52,7 @@ import PropTypes from 'prop-types';
             <div>
                <MDBContainer>
                   
-               <CreateQues onSubmit={this.onSubmit} />
+               <CreateQues onSubmit={this.onSubmit} pictureload1={this.pictureload1} pictureload2 = {this.pictureload2} />
                </MDBContainer>
             </div>
         )
@@ -49,7 +60,6 @@ import PropTypes from 'prop-types';
 }
 
 QuestionCreation.propTypes = {
-    
     createQuestion: PropTypes.func.isRequired,
     updateQuestion: PropTypes.func.isRequired,
 }
@@ -58,4 +68,5 @@ const mapStateToProps = (state, ownProps) => ({
     questionbank: state.create.question,
     
 })
+
 export default connect(mapStateToProps,{createQuestion,updateQuestion})(QuestionCreation)

@@ -2,10 +2,8 @@ import React, { Component, useState } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBFormInline, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText } from 'mdbreact';
 import Navbar from './Navbar';
 
-const CreateQues = ({ onsubmit }) => {
+const CreateQues = ({ onSubmit, pictureload1, pictureload2 }) => {
     const [difficultylevel, setDifficulty] = useState("Select difficulty");
-    const [image1, setImage1] = useState('');
-    const [image2, setImage2] = useState('');
     const [identical, setIdentical] = useState('Yes');
 
     return (
@@ -25,9 +23,10 @@ const CreateQues = ({ onsubmit }) => {
                         </MDBDropdownMenu>
                     </MDBDropdown>
                     <h5>Question</h5>
+                    <Uploadfile picUpload1={pictureload1} />
                     <MDBBtn color="secondary">Upload</MDBBtn>
                     <MDBCard style={{ width: "22rem" }}>
-                        <MDBCardImage className="img-fluid" src = {image1} waves />
+                        <MDBCardImage className="img-fluid" src = {picUpload1} waves />
                         <MDBCardBody>
                             <MDBCardTitle></MDBCardTitle>
                             <MDBCardText>
@@ -38,9 +37,10 @@ const CreateQues = ({ onsubmit }) => {
                     </MDBCard>
                     <br />
                     <h5>Answer</h5>
+                    <Uploadfile picUpload2={pictureload2} />
                     <MDBBtn color="secondary">Upload</MDBBtn>
                     <MDBCard style={{ width: "22rem" }}>
-                        <MDBCardImage className="img-fluid"  src = {image2} waves />
+                        <MDBCardImage className="img-fluid"  src = {picUpload2} waves />
                         <MDBCardBody>
                             <MDBCardTitle></MDBCardTitle>
                             <MDBCardText>
@@ -60,7 +60,7 @@ const CreateQues = ({ onsubmit }) => {
                         </MDBDropdownMenu>
                     </MDBDropdown>
                     <br />
-                    <MDBBtn color="primary" onClick={() => onsubmit(difficultylevel, image1, image2, identical)} >Set</MDBBtn>
+                    <MDBBtn color="primary" onClick={() => onSubmit(difficultylevel, image1, image2, identical)} >Set</MDBBtn>
                     <MDBBtn color="primary">Back</MDBBtn>
 
 
