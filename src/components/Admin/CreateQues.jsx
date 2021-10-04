@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBFormInline, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
 import Navbar from './Navbar';
 
-const CreateQues = ({ onSubmit, pictureload1, pictureload2 }) => {
+const CreateQues = ({ onSubmit }) => {
     const [difficultylevel, setDifficulty] = useState("Select difficulty");
     const [identical, setIdentical] = useState('Yes');
 
@@ -23,32 +23,13 @@ const CreateQues = ({ onSubmit, pictureload1, pictureload2 }) => {
                         </MDBDropdownMenu>
                     </MDBDropdown>
                     <h5>Question</h5>
-                    <Uploadfile picUpload1={pictureload1} />
+                   
                     <MDBBtn color="secondary">Upload</MDBBtn>
-                    <MDBCard style={{ width: "22rem" }}>
-                        <MDBCardImage className="img-fluid" src = {picUpload1} waves />
-                        <MDBCardBody>
-                            <MDBCardTitle></MDBCardTitle>
-                            <MDBCardText>
-                                Email: <br />
-                                Tutorial Group:
-                            </MDBCardText>
-                        </MDBCardBody>
-                    </MDBCard>
                     <br />
                     <h5>Answer</h5>
-                    <Uploadfile picUpload2={pictureload2} />
+                  
                     <MDBBtn color="secondary">Upload</MDBBtn>
-                    <MDBCard style={{ width: "22rem" }}>
-                        <MDBCardImage className="img-fluid"  src = {picUpload2} waves />
-                        <MDBCardBody>
-                            <MDBCardTitle></MDBCardTitle>
-                            <MDBCardText>
-                                Email: <br />
-                                Tutorial Group:
-                            </MDBCardText>
-                        </MDBCardBody>
-                    </MDBCard>
+                   
                     <h5>Identical?</h5>
                     <MDBDropdown>
                         <MDBDropdownToggle value={identical} caret color="primary">
