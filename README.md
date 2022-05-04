@@ -1,4 +1,7 @@
-# React Bootstrap with Material Design
+# Project for CZ3002 Advanced Software Engineering
+A website for selling secondhand preloved goods, made with Firebase and react.
+
+## React Bootstrap with Material Design
 MDBootstrap for React
 
 ## Getting Started
